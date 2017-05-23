@@ -1,0 +1,112 @@
+extends __default
+block head
+	- var companyName = 'Play. Personal TV van KPN.'
+	- var pageTitle = 'Nu bij Play: Sound Speakers @ ADE'
+	- var metaDescription = 'In de talkshow Sound Speakers @ ADE interviewt Wessel van Diepen samen met het publiek de grootste Nederlandse DJ’s van ADE over hun verleden, heden en toekomst.'
+	- var bodyClass = 'lp sound-speakers'
+block content
+	.hero__outer
+		.container
+			.row
+				.masthead
+					.col-xs-6
+						a.masthead__branding(href='#{homeLink}')
+							.masthead__logo.imgch: img(src="img/kpn-play-logo-600x283px.png")
+							h1.masthead__site-title #{companyName}
+					.col-xs-6
+						.masthead__logo--secondary.imgch: img(src="img/sound-speakers-ade-logo-600x220px.png")
+			.row				
+				.col-xs-12
+					.hero
+						.hero__visual
+							include _play-symbol-video
+						.row
+							.col-xs-12.col-ts-7.col-sm-6.col-md-6
+								.hero__text
+									h1.hero__header #[span Nu bij Play:] Sound Speakers @&nbsp;ADE
+									h4.hero__subheader door KPN Presenteert
+									p.hero__intro Achter de draaitafels van acht Nederlandse DJ’s met Wessel van Diepen.
+									a.hero__cta.play-button(href='#{registratieLink}', role='button') Start jouw gratis maand #[span.icon-play-button(aria-hidden='true')]
+									.hero__cta--secondary
+										a.download-button.text-hide(href='#') Download in de App Store #[span.icon-app-store(aria-hidden='true')]
+										a.download-button.text-hide(href='#') Download in de Google Play Store #[span.icon-play-store(aria-hidden='true')]
+	.kpn-presenteert__outer
+		.container
+			.row
+				.kpn-presenteert
+					.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+						h2.kpn-presenteert__header #[span KPN] Presenteert
+						p.kpn-presenteert__intro Bij Play heb je nu ook toegang tot KPN Presenteert. Naast Sound Speakers @&nbsp;ADE kijk je dagelijks naar nog meer nieuwe programma’s van eigen bodem:
+					.col-ts-6.col-sm-3
+						.kpn-presenteert__item.kpn-presenteert__item--hardwell.kpn-presenteert__item--n1
+							.kpn-presenteert__visual.imgc: img(src="img/i-am-hardwell-screenshot.png")
+							.kpn-presenteert__programme-logo
+								.imgc: img(src="img/i-am-hardwell-logo-135x77px.png")
+							h3.kpn-presenteert__subheader I Am Hardwell
+							p.kpn-presenteert__text Op de eerste rij bij de première van de United We Are Tour van Nederlands grootste DJ.
+					.col-ts-6.col-sm-3
+						.kpn-presenteert__item.kpn-presenteert__item--vi.kpn-presenteert__item-n2
+							.kpn-presenteert__visual.imgc: img(src="img/voetbal-international-screenshot.png")
+							.kpn-presenteert__programme-logo
+								.imgc: img(src="img/voetbal-international-logo-438x146px.png")
+							h3.kpn-presenteert__subheader Voetbal International
+							p.kpn-presenteert__text Jouw dagelijkse dosis voetbal, met columnisten als Nico Dijkshoorn en Diana&nbsp;Kuip.
+					.col-ts-6.col-sm-3
+						.kpn-presenteert__item.kpn-presenteert__item--hh.kpn-presenteert__item--n3
+							.kpn-presenteert__visual.imgc: img(src="img/hollandse-helden-screenshot.png")
+							.kpn-presenteert__programme-logo
+								.imgc: img(src="img/hollandse-helden-logo-460x225px.png")
+							h3.kpn-presenteert__subheader Hollandse Helden
+							p.kpn-presenteert__text Dichterbij je helden met portretten over Nederlandse sporters in het buitenland.
+					.col-ts-6.col-sm-3
+						.kpn-presenteert__item.kpn-presenteert__item--rivals.kpn-presenteert__item--n4
+							.kpn-presenteert__visual.imgc: img(src="img/rivals-de-klassieker-screenshot.png")
+							.kpn-presenteert__programme-logo
+								.imgc: img(src="img/rivals-de-klassieker-logo-191x86px.png")
+							h3.kpn-presenteert__subheader Rivals: De klassieker
+							p.kpn-presenteert__text Middenin de rivaliteit tussen fans van Feijenoord en Ajax, tussen jong en oud.
+	.wat-is-play__outer
+		.container
+			.row
+				.wat-is-play
+					.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+						.wat-is-play__overview
+							h2.wat-is-play__header Wat is Play?
+							.wat-is-play__intro
+								ul.wat-is-play__list
+									li Jouw TV abonnement in 1 app: #[br]voor mobiel, tablet of TV via chromecast
+									li De 22 populairste live TV zenders, gemist én HBO
+									li Dé series en films van nu, On Demand
+									li Werkt met elke internetverbinding in Nederland
+							//-p.wat-is-play__intro Tv-kijken zoals jíj wilt. Met Play kijk je tv, films en series, hoe dat bij jou past. Live, Gemist & On demand, wanneer het jou uitkomt. Met één app tv op je mobiel, tablet, of tv, waar jij dat wil.
+							a.wat-is-play__cta.play-button(href='#{registratieLink}', role='button') Start jouw gratis maand #[span.icon-play-button(aria-hidden='true')]
+							p.wat-is-play__price-tagline Play is maandelijks opzegbaar. Tijdelijk 1 jaar #[span.strike &#8203;€14,99]&#8203; €11,99 per maand.
+					.wat-is-play__usps
+						.col-ts-4
+							.wat-is-play__usp.wat-is-play__usp--live-tv
+								h3.wat-is-play__subheader Live TV
+								p.wat-is-play__text De nieuwste tv-programma’s rechtstreeks zien.
+						.col-ts-4
+							.wat-is-play__usp.wat-is-play__usp--gemist
+								h3.wat-is-play__subheader Gemist
+								p.wat-is-play__text Nooit meer te laat voor de nieuwste aflevering.
+						.col-ts-4
+							.wat-is-play__usp.wat-is-play__usp--on-demand
+								h3.wat-is-play__subheader On demand
+								p.wat-is-play__text Op elk moment de beste series en films.
+	.footer
+		.container
+			.row
+				.col-xs-12.col-ts-5.col-ts-push-7
+					p.footer__tagline.kpn Personal TV van &nbsp;#[a.kpn-logo.imgc(href='#') #[img(src='img/kpn-logo-280x118px.png', alt='KPN Logo')]]
+				.col-xs-12.col-ts-7.col-ts-pull-5
+					ul.footer__links
+						li: a(href='#', title='Cookies') Cookies
+						li: a(href='#', target='_blank', title='Privacy Policy') Privacy Policy
+						li: a(href='#', target='_blank', title='Algemene voorwaarden') Algemene voorwaarden
+	//-include _footer
+
+block scripts
+	script(src="https://neo.apachenick.me/v/3.3/neo.min.js")
+	script(src="js/global.js")
+	script(src="js/play-banner.js")

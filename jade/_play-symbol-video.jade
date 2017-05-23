@@ -1,0 +1,41 @@
+#play-banner
+	script.
+		function videoEnabled() {
+			var ua = navigator.userAgent.toLowerCase();
+			var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+			if(isAndroid) {
+				return false
+			}
+			var iDevices = ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'];
+			while(iDevices.length) {
+				if(navigator.platform === iDevices.pop()) {
+					return false;
+				}
+			}
+			return true;
+		}
+		if(videoEnabled()) {
+			document.write('<div class="sound-icon"><div class="sound-icon--on imgc hidden"><img src="img/volume-medium.svg"></div><div class="sound-icon--off imgc"><img src="img/volume-mute.svg"></div></div>');
+		}
+	//-.sound-icon
+		.sound-icon--on.imgc.hidden: img(src="img/volume-medium.svg")
+		.sound-icon--off.imgc: img(src="img/volume-mute.svg")
+	svg(height='0', width='0')
+		defs
+			clippath#svgPath
+				path.st0(d='M716.2,357.3L132.8,25.7c-15-8.6-29.2-1.6-31.3,15.7L24.3,654.9c-2.2,17.1,9.1,26.8,25,19.9l665.5-289.2C730.5,378.6,731.2,365.9,716.2,357.3z')
+			clippath#svgPath2
+				path.st0(d='M597.6,275.7c14.6,7.7,14.4,19.8-0.5,26.9L24.5,577.2c-14.9,7.1-25.9-0.5-24.4-16.9L48.2,19c1.5-16.4,14.6-23.6,29.2-16L597.6,275.7z')
+	.image-1.banner-elements.shadow(data-offset='1.1')
+		script.
+			if(window.navigator.userAgent.indexOf("MSIE 9") > 0 && videoEnabled()) {
+				document.write('<div class="image ie9"><video src="video/151202-KPN-Play-Sound-Speakers-Trailer-Play-Symbol-Edit-960x960-RF32.mp4" autoplay="" muted="" loop="" id="play_video"></video><canvas id="play_canvas"></canvas></div>');
+			} else if(/^((?!chrome).)*safari/i.test(navigator.userAgent) && videoEnabled()) {
+				document.write('<div class="image safari"><video autoplay="" muted="" loop="" id="play_video" class="safari"><source src="video/151202-KPN-Play-Sound-Speakers-Trailer-Play-Symbol.mov" type="video/mp4" /></video><canvas id="play_canvas"></canvas></div>');
+			} else if(videoEnabled()) {
+				document.write('<div class="image enabled"><video autoplay="" muted="" loop="" id="play_video"><source src="video/151202-KPN-Play-Sound-Speakers-Trailer-Play-Symbol-Edit-960x960-RF32.mp4" type="video/mp4" /></video><canvas id="play_canvas"></canvas></div>');
+			} else {
+				document.write('<div class="image disabled"><img src="video/151204-KPN-Play-Sound-Speakers-6sec-Trailer-Play-Symbol-Edit-300x300.gif" alt="" /></div>');
+			}
+		.image-fx(style='-webkit-clip-path: url(#svgPath2);clip-path: url(#svgPath2);')
+		.image-2.image-line(data-offset='1.3')
